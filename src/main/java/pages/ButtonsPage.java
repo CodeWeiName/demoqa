@@ -4,14 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class BattonsPage {
-    WebDriver driver;
+public class ButtonsPage extends BasePage {
 
-    public BattonsPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public ButtonsPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(xpath = "//button [text () = 'Double Click Me']")
@@ -32,26 +29,24 @@ public class BattonsPage {
     @FindBy(xpath = "//p [text () = 'You have done a dynamic click']")
     WebElement dynamicClickMessage;
 
-    public BattonsPage open() {
-        driver.get("https://demoqa.com/buttons");
+    public ButtonsPage open() {
+        driver.get(baseUrl + "buttons");
         return this;
     }
 
-    public BattonsPage checkDoubleClick() {
+    public ButtonsPage checkDoubleClick() {
         Actions actions = new Actions(driver);
         actions.doubleClick(doubleClickBtn).perform();
         return this;
     }
 
-
-    public BattonsPage checkRightClick() {
+    public ButtonsPage checkRightClick() {
         Actions actions = new Actions(driver);
         actions.contextClick(rightClickBtn).perform();
         return this;
     }
 
-
-    public BattonsPage checkDinamycClick() {
+    public ButtonsPage checkDinamycClick() {
         oneClick.click();
         return this;
     }
@@ -67,5 +62,4 @@ public class BattonsPage {
     public String checkDynamicMessage() {
         return dynamicClickMessage.getText();
     }
-
 }

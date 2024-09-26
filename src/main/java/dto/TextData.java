@@ -1,10 +1,10 @@
-package dta;
+package dto;
 
 public class TextData {
-    String userName;
-    String userEmail;
-    String currentAddress;
-    String permanentAddress;
+    private String userName;
+    private String userEmail;
+    private String currentAddress;
+    private String permanentAddress;
 
     public TextData(String userName, String userEmail, String currentAddress, String permanentAddress) {
         this.userName = userName;

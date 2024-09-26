@@ -6,7 +6,7 @@ import static org.testng.Assert.assertTrue;
 public class LinkTest extends BaseTest {
 
     @Test(testName = "Тест ссылки на домашнюю страницу")
-    public void homePageLinkTest() {
+    public void clickHomePageLink() {
         linkPage.open()
                 .clickHome();
         assertTrue(linkPage.check(),
@@ -14,7 +14,7 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест динамической ссылки на домашнюю страницу")
-    public void homePageDynamicLinkTest() {
+    public void clickHomePageDynamicLink() {
         linkPage.open()
                 .clickHomeDynamic();
         assertTrue(linkPage.check(),
@@ -22,7 +22,7 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест ссылки со статусом 201")
-    public void createdLinkTest() {
+    public void clickCreatedLink() {
         linkPage.open()
                 .createdLink();
         assertEquals(linkPage.errorMessage(),
@@ -31,7 +31,7 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест ссылки со статусом 204")
-    public void noCorrectLinkTest() {
+    public void clickNoCorrectLink() {
         linkPage.open()
                 .noContentLink();
         assertEquals(linkPage.errorMessage(),
@@ -40,7 +40,7 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест ссылки со статусом 301")
-    public void movedLinkTest() {
+    public void clickMovedLink() {
         linkPage.open()
                 .movedLink();
         assertEquals(linkPage.errorMessage(),
@@ -49,7 +49,7 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест ссылки со статусом 400")
-    public void badRequestLinkTest() {
+    public void clickBadRequestLink() {
         linkPage.open()
                 .badRequestLink();
         assertEquals(linkPage.errorMessage(),
@@ -58,7 +58,7 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест ссылки со статусом 401")
-    public void unauthorizedLinkTest() {
+    public void clickUnauthorizedLink() {
         linkPage.open()
                 .unauthorizedLink();
         assertEquals(linkPage.errorMessage(),
@@ -67,7 +67,7 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест ссылки со статусом 403")
-    public void forbiddenLinkTest() {
+    public void clickForbiddenLink() {
         linkPage.open()
                 .forbiddenLink();
         assertEquals(linkPage.errorMessage(),
@@ -76,13 +76,11 @@ public class LinkTest extends BaseTest {
     }
 
     @Test(testName = "Тест ссылки со статусом 404")
-    public void notFoundLinkTest() {
+    public void clickNotFoundLink() {
         linkPage.open()
                 .notFoundLink();
         assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 404 and status text Not Found",
                 "Текст ошибки не соответствует");
     }
-
-
 }

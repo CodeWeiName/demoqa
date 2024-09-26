@@ -1,16 +1,16 @@
 package pages;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class RadioPage {
-    WebDriver driver;
+
+public class RadioPage extends BasePage {
 
     public RadioPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//label[@for='yesRadio']")
@@ -26,7 +26,7 @@ public class RadioPage {
     WebElement message;
 
     public RadioPage open() {
-        driver.get("https://demoqa.com/radio-button");
+        driver.get(baseUrl + "radio-button");
         return this;
     }
 
@@ -45,9 +45,11 @@ public class RadioPage {
         return this;
     }
 
+    public boolean noSelected() {
+        return noRadio.isSelected();
+    }
+
     public boolean getMessage() {
         return message.isDisplayed();
     }
-
-
 }

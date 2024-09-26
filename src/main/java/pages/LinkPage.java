@@ -3,17 +3,14 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LinkPage {
-    WebDriver driver;
+public class LinkPage extends BasePage {
 
     public LinkPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
-    String url = "https://demoqa.com/links";
+    String url = baseUrl + "links";
     String newUrl;
 
     @FindBy(id = "simpleLink")
@@ -110,5 +107,4 @@ public class LinkPage {
             return false;
         else return true;
     }
-
 }

@@ -5,18 +5,18 @@ import static org.testng.Assert.assertEquals;
 public class ButtonsTest extends BaseTest {
 
     @Test(testName = "Нажатие всех кнопок по запросу")
-    public void test() {
-        battondPage.open()
+    public void checkClickAllButton() {
+        buttonsPage.open()
                 .checkDoubleClick()
                 .checkRightClick()
                 .checkDinamycClick();
-        assertEquals(battondPage.checkDoubleMessage(),
+        softAssert.assertEquals(buttonsPage.checkDoubleMessage(),
                 "You have done a double click",
                 "Сообщение вывода не соответствует");
-        assertEquals(battondPage.checkRightMessage(),
+        softAssert.assertEquals(buttonsPage.checkRightMessage(),
                 "You have done a right click",
                 "Сообщение вывода не соответствует");
-        assertEquals(battondPage.checkDynamicMessage(),
+        softAssert.assertEquals(buttonsPage.checkDynamicMessage(),
                 "You have done a dynamic click",
                 "Сообщение вывода не соответствует");
     }

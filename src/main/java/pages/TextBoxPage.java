@@ -1,19 +1,16 @@
 package pages;
 
-import dta.TextData;
+import dto.TextData;
 import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 @Data
-public class TextBoxPage {
-    WebDriver driver;
+public class TextBoxPage extends BasePage {
 
     public TextBoxPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(id = "userName")
@@ -35,7 +32,7 @@ public class TextBoxPage {
     WebElement output;
 
     public TextBoxPage open() {
-        driver.get("https://demoqa.com/text-box");
+        driver.get(baseUrl + "text-box");
         return this;
     }
 
@@ -51,5 +48,4 @@ public class TextBoxPage {
     public String getMessage() {
         return output.getText();
     }
-
 }

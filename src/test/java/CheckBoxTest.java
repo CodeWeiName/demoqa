@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 public class CheckBoxTest extends BaseTest {
 
     @Test
-    public void test1() {
+    public void checkAllItemSelected() {
         checkBoxPage.open();
     }
 }
