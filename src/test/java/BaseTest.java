@@ -23,7 +23,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000000));
         textBoxPage = new TextBoxPage(driver);
         checkBoxPage = new CheckBoxPage(driver);
         buttonsPage = new ButtonsPage(driver);

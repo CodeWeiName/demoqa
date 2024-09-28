@@ -7,6 +7,7 @@ public class PracticFormData {
     private String email;
     private String mobile;
     private String currentAddress;
+    private String subjects;
 
     public PracticFormData(String firstName, String lastName, String email, String mobile, String currentAddress) {
         this.firstName = firstName;
@@ -14,6 +15,7 @@ public class PracticFormData {
         this.email = email;
         this.mobile = mobile;
         this.currentAddress = currentAddress;
+        // this.subjects = subjects;
     }
 
     public String getFirstName() {
@@ -31,10 +33,6 @@ public class PracticFormData {
     public String getMobile() {
         return mobile;
     }
-
-  /*  public String getSubjects() {
-        return subjects;
-    }*/
 
     public String getCurrentAddress() {
         return currentAddress;
@@ -56,11 +54,15 @@ public class PracticFormData {
         this.mobile = mobile;
     }
 
-   /* public void setSubjects(String subjects) {
-        this.subjects = subjects;
-    }*/
-
     public void setCurrentAddress(String currentAddress) {
         this.currentAddress = currentAddress;
     }
+
+  /*  public String getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(String subjects) {
+        this.subjects = subjects;
+    }*/
 }

@@ -1,6 +1,7 @@
 package pages;
 
 import dto.TextData;
+import io.qameta.allure.Step;
 import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,11 +32,13 @@ public class TextBoxPage extends BasePage {
     @FindBy(id = "output")
     WebElement output;
 
+    @Step("Открытие страницы")
     public TextBoxPage open() {
         driver.get(baseUrl + "text-box");
         return this;
     }
 
+    @Step("Заполнение текстовых форм")
     public TextBoxPage textBox(TextData data) {
         userName.sendKeys(data.getUserName());
         userEmail.sendKeys(data.getUserEmail());
@@ -45,6 +48,7 @@ public class TextBoxPage extends BasePage {
         return this;
     }
 
+    @Step("Вывод сообщения на дисплей")
     public String getMessage() {
         return output.getText();
     }

@@ -20,6 +20,12 @@ public class PracticFormTest extends BaseTest {
                 .clickHobbieSport()
                 .clickHobbieReading()
                 .clickHobbieMusic()
+                .dowloadFile()
+                .selectState()
+                // .choiseSelectState()
                 .clickSumbit();
+        /*assertEquals(practicFormPage.getThankText(),
+                "Thanks for submitting the form",
+                "Сообщение не соответствует");*/
     }
 }

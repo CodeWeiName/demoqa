@@ -13,7 +13,7 @@
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.version>2.24.0</allure.version>
-        <aspectj.version>1.9.20.1</aspectj.version>
+        <aspectj.version>1.9.22.1</aspectj.version>
     </properties>
 
     <dependencyManagement>
@@ -61,6 +61,14 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.22.1</version>
+        </dependency>
+
 
     </dependencies>
 

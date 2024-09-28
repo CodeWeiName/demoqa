@@ -1,9 +1,13 @@
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
 
 public class ButtonsTest extends BaseTest {
 
+    @Epic("Demo QA")
+    @Feature("Button Page")
+    @Story("Взаимодействие со всеми кнопками")
     @Test(testName = "Нажатие всех кнопок по запросу")
     public void checkClickAllButton() {
         buttonsPage.open()
