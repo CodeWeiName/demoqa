@@ -3,9 +3,6 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
 public class LinkTest extends BaseTest {
 
     @Epic("Demo QA")
@@ -15,8 +12,9 @@ public class LinkTest extends BaseTest {
     public void clickHomePageLink() {
         linkPage.open()
                 .clickHome();
-        assertTrue(linkPage.check(),
+        softAssert.assertTrue(linkPage.check(),
                 "url - не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -26,8 +24,9 @@ public class LinkTest extends BaseTest {
     public void clickHomePageDynamicLink() {
         linkPage.open()
                 .clickHomeDynamic();
-        assertTrue(linkPage.check(),
+        softAssert.assertTrue(linkPage.check(),
                 "url - не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -37,9 +36,10 @@ public class LinkTest extends BaseTest {
     public void clickCreatedLink() {
         linkPage.open()
                 .createdLink();
-        assertEquals(linkPage.errorMessage(),
+        softAssert.assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 201 and status text Created",
                 "Текст ошибки не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -49,9 +49,10 @@ public class LinkTest extends BaseTest {
     public void clickNoCorrectLink() {
         linkPage.open()
                 .noContentLink();
-        assertEquals(linkPage.errorMessage(),
+        softAssert.assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 204 and status text No Content",
                 "Текст ошибки не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -61,9 +62,10 @@ public class LinkTest extends BaseTest {
     public void clickMovedLink() {
         linkPage.open()
                 .movedLink();
-        assertEquals(linkPage.errorMessage(),
+        softAssert.assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 301 and status text Moved Permanently",
                 "Текст ошибки не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -73,9 +75,10 @@ public class LinkTest extends BaseTest {
     public void clickBadRequestLink() {
         linkPage.open()
                 .badRequestLink();
-        assertEquals(linkPage.errorMessage(),
+        softAssert.assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 400 and status text Bad Request",
                 "Текст ошибки не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -85,9 +88,10 @@ public class LinkTest extends BaseTest {
     public void clickUnauthorizedLink() {
         linkPage.open()
                 .unauthorizedLink();
-        assertEquals(linkPage.errorMessage(),
+        softAssert.assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 401 and status text Unauthorized",
                 "Текст ошибки не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -97,9 +101,10 @@ public class LinkTest extends BaseTest {
     public void clickForbiddenLink() {
         linkPage.open()
                 .forbiddenLink();
-        assertEquals(linkPage.errorMessage(),
+        softAssert.assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 403 and status text Forbidden",
                 "Текст ошибки не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("Demo QA")
@@ -109,8 +114,9 @@ public class LinkTest extends BaseTest {
     public void clickNotFoundLink() {
         linkPage.open()
                 .notFoundLink();
-        assertEquals(linkPage.errorMessage(),
+        softAssert.assertEquals(linkPage.errorMessage(),
                 "Link has responded with staus 404 and status text Not Found",
                 "Текст ошибки не соответствует");
+        softAssert.assertAll();
     }
 }

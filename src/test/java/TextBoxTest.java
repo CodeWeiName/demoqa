@@ -4,6 +4,8 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
+
 
 public class TextBoxTest extends BaseTest {
 
@@ -20,7 +22,7 @@ public class TextBoxTest extends BaseTest {
     public void validDataInBox() {
         textBoxPage.open()
                 .textBox(data);
-        softAssert.assertEquals(textBoxPage.getMessage(),
+        assertEquals(textBoxPage.getMessage(),
                 "Name:Chanyshev Danil\n" +
                         "Email:qacode@gmail.com\n" +
                         "Current Address :Khanty-Mansisk\n" +

@@ -3,9 +3,6 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
-
 public class RadioTest extends BaseTest {
 
     @Epic("DemoQA")
@@ -15,8 +12,9 @@ public class RadioTest extends BaseTest {
     public void clickYes() {
         radioPage.open()
                 .clickYes();
-        assertTrue(radioPage.getMessage(),
+        softAssert.assertTrue(radioPage.getMessage(),
                 "Вывод не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("DemoQA")
@@ -26,8 +24,9 @@ public class RadioTest extends BaseTest {
     public void clickImpressiveTest() {
         radioPage.open()
                 .clickImpressive();
-        assertTrue(radioPage.getMessage(),
+        softAssert.assertTrue(radioPage.getMessage(),
                 "Вывод не соответствует");
+        softAssert.assertAll();
     }
 
     @Epic("DemoQA")
@@ -37,7 +36,8 @@ public class RadioTest extends BaseTest {
     public void clickNoTest() {
         radioPage.open()
                 .clickNo();
-        assertFalse(radioPage.noSelected());
+        softAssert.assertFalse(radioPage.noSelected());
+        softAssert.assertAll();
     }
 
     @Epic("DemoQA")
@@ -53,7 +53,8 @@ public class RadioTest extends BaseTest {
         softAssert.assertTrue(radioPage.getMessage(),
                 "Вывод не соответствует");
         radioPage.clickNo();
-        assertFalse(radioPage.noSelected(),
+        softAssert.assertFalse(radioPage.noSelected(),
                 "Вывод не соответствует");
+        softAssert.assertAll();
     }
 }

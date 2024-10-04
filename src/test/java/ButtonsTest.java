@@ -23,5 +23,6 @@ public class ButtonsTest extends BaseTest {
         softAssert.assertEquals(buttonsPage.checkDynamicMessage(),
                 "You have done a dynamic click",
                 "Сообщение вывода не соответствует");
+        softAssert.assertAll();
     }
 }

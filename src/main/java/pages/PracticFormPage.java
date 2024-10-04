@@ -36,25 +36,7 @@ public class PracticFormPage extends BasePage {
     @FindBy(id = "userNumber")
     WebElement userNumber;
 
-   /* @FindBy(id = "dateOfBirthInput")
-    WebElement dateOfBirthInput;
-
-    @FindBy(xpath = "react-datepicker__month-select")
-    WebElement selectOfMouth;
-
-    @FindBy(xpath = "react-datepicker__year-select")
-    WebElement selectOfYear;
-
-    @FindBy(xpath = "//div[text() = 24]")
-    WebElement selectDay;
-
-    @FindBy(xpath = "//button[text() = 'Previous Month']")
-    WebElement previousMouthButton;
-
-    @FindBy(xpath = "//button[text() = 'Next Month']")
-    WebElement nextMouthButton;*/
-
-    @FindBy(xpath = "//span[@class = 'subjects-auto-complete__indicator-separator css-1okebmr-indicatorSeparator']")
+    @FindBy(id = "subjectsContainer")
     WebElement subjectsContainer;
 
     @FindBy(xpath = "//label[@for='hobbies-checkbox-1']")
@@ -93,7 +75,6 @@ public class PracticFormPage extends BasePage {
         lastName.sendKeys(data.getLastName());
         userEmail.sendKeys(data.getEmail());
         userNumber.sendKeys(data.getMobile());
-        //subjectsContainer.sendKeys(data.getSubjects());
         currentAddress.sendKeys(data.getCurrentAddress());
         return this;
     }
@@ -144,14 +125,6 @@ public class PracticFormPage extends BasePage {
         uploadPicture.sendKeys("/Users/coderwei/test.txt");
         return this;
     }
-
-   /* @Step("Заполнение календаря")
-    public PracticFormPage selectData() {
-        dateOfBirthInput.click();
-        dateOfBirthInput.clear();
-        dateOfBirthInput.sendKeys("02.04.2002");
-        return this;
-    }*/
 
     public PracticFormPage selectState() {
         selectState.sendKeys("NCR");

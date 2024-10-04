@@ -8,7 +8,7 @@ public class PracticFormTest extends BaseTest {
             "Chanyshev",
             "coder@gmail.com",
             "9194198930",
-            "HMAO");
+            "HMAO,");
 
     @Test
     public void checkFullFilling() {
@@ -22,10 +22,6 @@ public class PracticFormTest extends BaseTest {
                 .clickHobbieMusic()
                 .dowloadFile()
                 .selectState()
-                // .choiseSelectState()
                 .clickSumbit();
-        /*assertEquals(practicFormPage.getThankText(),
-                "Thanks for submitting the form",
-                "Сообщение не соответствует");*/
     }
 }

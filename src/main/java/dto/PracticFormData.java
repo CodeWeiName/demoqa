@@ -15,7 +15,6 @@ public class PracticFormData {
         this.email = email;
         this.mobile = mobile;
         this.currentAddress = currentAddress;
-        // this.subjects = subjects;
     }
 
     public String getFirstName() {
@@ -58,11 +57,11 @@ public class PracticFormData {
         this.currentAddress = currentAddress;
     }
 
-  /*  public String getSubjects() {
+    public String getSubjects() {
         return subjects;
     }
 
     public void setSubjects(String subjects) {
         this.subjects = subjects;
-    }*/
+    }
 }
